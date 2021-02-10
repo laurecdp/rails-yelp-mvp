@@ -8,6 +8,13 @@
   <li> Category: <strong> <%= @restaurant.category %></strong> </li>
 </ul>
 
+<h2> Reviews </h2>
+
+<ul class="list-inline"> <% @restaurant.reviews.each do |review| %>
+  <li> <%= review.content %> <%= review.rating %></li> 
+  <% end %>
+</ul>
+
 <p> <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %> </p>
 <p> <%= link_to "Back to restaurants", restaurants_path %> </p>
 
